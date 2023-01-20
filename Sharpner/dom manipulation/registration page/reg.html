@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body>
+    <header>
+        <h1>Registration form</h1>
+         <h4>Book a call and our representative will call you within 1hr of selected time</h4>
+    </header>
+    <hr>
+
+    <section class ="container">
+    <form id="my-form"> 
+        <div id="msg"></div> 
+<div>
+    <label for="name">Name:</label>
+     <input type="text" id="name">
+</div>
+<div>
+    <label for="email">E-Mail::</label>
+    <input type="email" id="email">
+ </div>
+<div>
+    <label for="phone">Phone:</label>
+    <input type="number" id="phone">
+</div>
+<div>
+    <label for="time">Date:</label>
+    <input type="datetime-local" id="time">
+    
+</div>
+   <br>
+  <input class="btn" type="submit" value="Get a call soon">
+
+
+    </form>
+    <ul id="users"></ul>
+
+
+    <!-- <ul class="items">
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul> -->
+    </section>
+    <script src="reg.js"></script>
+</body>
+</html>

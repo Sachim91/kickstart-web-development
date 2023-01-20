@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storing obj in local storage</title>
+</head>
+<body>
+    <script>
+
+        let myObj = {
+            name : "sachin",
+            age :56
+        };
+
+        let myObj_serialized = JSON.stringify(myObj); 
+        // console.log(myObj_serialized);
+
+        localStorage.setItem('myObj',myObj_serialized);
+        console.log(localStorage);
+        let myObj_deserialized = localStorage.getItem("myObj");
+        console.log(myObj_deserialized);
+        
+    </script>
+</body>
+</html>

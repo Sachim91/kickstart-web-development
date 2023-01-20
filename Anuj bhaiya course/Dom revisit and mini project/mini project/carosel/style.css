@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.canvas{
+ height: 100vh;
+ background-color: black;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.container{
+    wi 
+}

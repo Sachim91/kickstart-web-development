@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch bulb</title>
+</head>
+<style>
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.btn{
+    padding: 20px;
+}
+</style>
+<body style="background-color: black;">
+    <img id="bulb" class="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkj0i9JISS-ei_k5AciqCEdEfjlrpiWoECFFXAxUGteSqs2VgbqmpJtr8QlpCSIxbj-_w&usqp=CAU" alt="">
+    <button id="toggleBtn" class="center btn">Turn On</button>
+    <script>
+        let btn = document.getElementById('toggleBtn');
+        let bulb = document.getElementById('bulb');  
+        btn.addEventListener('click',toggleBulb);
+        function toggleBulb(e){
+         
+         if(btn.textContent.includes('On')){
+         
+       bulb.src='https://c8.alamy.com/comp/MC3MDB/abstract-light-bulb-on-the-black-background-lamp-light-in-the-dark-electric-bulb-glowing-light-in-the-dark-MC3MDB.jpg';
+       btn.textContent ='turn off'
+        }
+        else{
+            bulb.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkj0i9JISS-ei_k5AciqCEdEfjlrpiWoECFFXAxUGteSqs2VgbqmpJtr8QlpCSIxbj-_w&usqp=CAU";
+            bulb.textContent='turn on';
+        }
+    }
+    </script>
+</body>
+</html>
