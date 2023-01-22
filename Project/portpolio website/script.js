@@ -46,5 +46,6 @@ let name2 = {
             //bind method
 //don't directly in voke the method,it just give copy of same method which can be invoked latter
             let PrintMyName = PrintFullName.bind(name2,"mumbai","Maharastra");
+            //
             console.log(PrintMyName);
             PrintMyName();
