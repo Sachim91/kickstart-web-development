@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expance Tracker App</title>
+    
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div>
+        <div class="app">
+            <h1 id=".app-h1">Expance Tracker</h1>
+        </div>
+
+        <div class="balance-container">
+            <h2>Your Balance</h2>
+            <div class="balance">$1000</div>
+        </div>
+
+        <div class="cashflow-container">
+            <div class="income-container">
+            <h2>Income</h2>
+            <div id="income">$1200</div>
+        </div>
+        <div class="expance-container">
+            <h2>Expence</h2>
+            <div id="expence">$200</div>
+        </div>
+     </div>
+     <div class="form-container">
+        <h2>Add new transection</h2>
+        <form onsubmit="return false;">
+            <label for="name">Name</label>
+            <input id="name" type="text">
+            <label for="amount">Amount</label>
+            <input id="amount"  type="number">
+                <br>
+            <button id="incomeBtn">Add Income</button>
+            <button id="expenceBtn">Add Expense</button>
+        </form>
+
+    </div>
+        <div class="transaction-container">
+            <h2>Transaction History</h2>
+            <ul id="transection">
+                
+               
+            
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+   
+</body>
+</html>
