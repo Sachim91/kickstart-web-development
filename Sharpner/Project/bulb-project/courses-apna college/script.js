@@ -7,12 +7,12 @@ let addBtn = document.getElementById("add_btn");
           let currentBtn = e.currentTarget;
           let currentInput = currentBtn.previousElementSibling
           console.log(currentInput.value);
-//CREATE NEW LI FEOM DOCUMENT
+ //CREATE NEW LI FEOM DOCUMENT
           let newLi = document.createElement('li');
           newLi.classList.add('list-group-item')
-          newLi.textContent = currentInput.value
+           newLi.textContent = currentInput.value
 //ADDING ELEMRNT IN LI USING ID TAG
           let parentList = document.getElementById("parentList")
           parentList.appendChild(newLi)
-        }
+      }
         

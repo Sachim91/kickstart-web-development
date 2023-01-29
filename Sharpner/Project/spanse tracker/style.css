@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  #expense-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #expense-table th, #expense-table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #expense-table .edit-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 8px;
+  }
+  
+  #expense-table .delete-button {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
