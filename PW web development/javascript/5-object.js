@@ -64,3 +64,43 @@ for(let x in userDetails ){
    //console.log(userDetails[x]);
    console.log(`The value of ${x} is ${userDetails[x]}`);
 }
+
+//                                                                   task 1
+//  array of object
+
+// Problem Statement :   We have to create an array of object ;each obj should have name,price,launch Date and buy that ,method of buy.
+
+
+  let appleProducts =[
+          
+    {
+        Name : "Mackbook",
+        Price : 50000,
+        LaunchDate : "23,dec",
+        buyProduct: function(){
+            console.log(`congratulation,you have purchased ${this.Name}`)
+        }
+
+    },{
+
+        Name : "iphone",
+        Price : 10000,
+        LaunchDate : "25,dec",
+        buyProduct:function(name){
+            console.log(`congratulation,you have purchased ${this.Name}`)
+        }   
+    }
+  ];
+console.log(appleProducts);
+
+
+//                                                           TASK 2
+
+//get element from foreach function 
+
+let arr = [1,2,3,4,5,6,7,8,9];
+
+arr.forEach( (val)=>{
+     console.log(val);
+});
+
