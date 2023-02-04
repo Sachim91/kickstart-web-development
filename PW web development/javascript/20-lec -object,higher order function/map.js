@@ -56,3 +56,6 @@
 let numbers = [2,3,4]
 let sum = numbers.reduce((acc,cur) => acc+cur,2);
 console.log(sum);
+
+
+
