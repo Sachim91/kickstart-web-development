@@ -43,6 +43,7 @@
 
 // setInterval(() => {
 //     console.log("hello");
-// }, 3000);
+// }, 10000);
 
 console.log("hello");
+clearInterval(setInterval)
