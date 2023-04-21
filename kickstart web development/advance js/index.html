@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Appointment Booking Page</title>
+</head>
+<body>
+  <h1>Book an Appointment</h1>
+  <form id="appointmentForm">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date"><br><br>
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time"><br><br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <button type="submit">Book Appointment</button>
+  </form>
+  
+  <h2>Your Appointments</h2>
+  <ul id="appointmentsList"></ul>
+  
+  <script>
+    const form = document.querySelector('#appointmentForm');
+    const appointmentsList = document.querySelector('#appointmentsList');
+    
+    // Load appointments from local storage
+    if (localStorage.getItem('appointments')) {
+      const appointments = JSON.parse(localStorage.getItem('appointments'));
+      appointments.forEach(appointment => {
+        const li = document.createElement('li');
+        li.textContent = `${appointment.date} ${appointment.time} - ${appointment.name}`;
+        appointmentsList.appendChild(li);
+      });
+    }
+    
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const date = form.elements.date.value;
+      const time = form.elements.time.value;
+      const name = form.elements.name.value;
+      
+      // Store appointment in local storage
+      if (localStorage.getItem('appointments')) {
+        const appointments = JSON.parse(localStorage.getItem('appointments'));
+        appointments.push({ date, time, name });
+        localStorage.setItem('appointments', JSON.stringify(appointments));
+      } else {
+        localStorage.setItem('appointments', JSON.stringify([{ date, time, name }]));
+      }
+      
+      // Display appointment on the page
+      const li = document.createElement('li');
+      li.textContent = `${date} ${time} - ${name}`;
+      appointmentsList.appendChild(li);
+    });
+  </script>
+</body>
+</html>

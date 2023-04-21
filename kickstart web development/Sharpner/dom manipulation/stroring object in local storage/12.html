@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="registration-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+      
+        <button type="button" id="submit-button">Submit</button>
+        <ul id="data-list"></ul>
+      </form>
+      
+      <script>
+        // submit form data
+        document.querySelector('#submit-button').addEventListener('click', function() {
+          // get form data
+          const name = document.querySelector('#name').value;
+          const email = document.querySelector('#email').value;
+          const phone = document.querySelector('#phone').value;
+      
+          // store data in local storage
+          let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+          contacts.push({name: name, email: email, phone: phone});
+          localStorage.setItem("contacts", JSON.stringify(contacts));
+      
+          // create list item
+          const listItem = document.createElement('li');
+          listItem.innerHTML = `Name: ${name} Email: ${email} Phone: ${phone} <button class="edit-button">Edit</button> <button class="delete-button">Delete</button>`;
+      
+          // append list item to data list
+          document.querySelector('#data-list').appendChild(listItem);
+      
+          // Add event listener to delete button
+          listItem.querySelector('.delete-button').addEventListener('click', function() {
+            // delete data from local storage
+            let index = contacts.findIndex(c => c.name === name && c.email === email && c.phone === phone);
+            contacts.splice(index, 1);
+            localStorage.setItem("contacts", JSON.stringify(contacts));
+      
+            // delete data from UI
+            listItem.remove();
+          });
+      
+          // Add event listener to edit button
+          listItem.querySelector('.edit-button').addEventListener('click', function() {
+            // get current data
+            const currentName = name;
+            const currentEmail = email;
+            const currentPhone = phone;
+      
+            // create form inputs
+            const nameInput = document.createElement('input');
+            nameInput.setAttribute('type', 'text');
+            nameInput.setAttribute('value', currentName);
+            const emailInput = document.createElement('input');
+            emailInput.setAttribute('type', 'email');
+            emailInput.setAttribute('value', currentEmail);
+            const phoneInput = document.createElement('input');
+            phoneInput.setAttribute('type', 'tel');
+            phoneInput.setAttribute('value', currentPhone);
+            
+            
+
+    </script>
+</body>
+</html>
